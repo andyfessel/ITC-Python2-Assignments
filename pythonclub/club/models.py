@@ -10,6 +10,7 @@ class Meeting(models.Model):
     meetingtime=models.TimeField()
     meetinglocation=models.CharField(max_length=255)
     meetingagenda=models.CharField(max_length=255)
+    meetingid=models.IntegerField(max_length=255)
 
     def __str__(self):
         return self.meetingtitle
