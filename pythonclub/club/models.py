@@ -10,7 +10,7 @@ class Meeting(models.Model):
     meetingtime=models.TimeField()
     meetinglocation=models.CharField(max_length=255)
     meetingagenda=models.CharField(max_length=255)
-    meetingid=models.IntegerField(max_length=255)
+
 
     def __str__(self):
         return self.meetingtitle
@@ -21,14 +21,14 @@ class Meeting(models.Model):
 class MeetingMinutes(models.Model):
     ##meetminid=models.CharField(max_length=255)
     ##meetminname=models.CharField(max_length=255)
-    meetminid=models.ForeignKey(Meeting, on_delete=models.DO_NOTHING) 
+    meetingminutesid=models.ForeignKey(Meeting, on_delete=models.DO_NOTHING) 
     ##meetmincreatedate=models.DateTimeField('Last Updated')
     ##meetminpublishdate=models.DateTimeField('Last Published')
     meetminattendance=models.ManyToManyField(User)
     meetmintext=models.TextField(max_length=500, blank=True)
 
     def __str__(self):
-        return str(self.meetminid)
+        return str(self.meetingminutesid)
 
     class Meta:
         db_table='meetingminutes'
