@@ -4,5 +4,7 @@ urlpatterns=[
     path('', views.index,name='index'),
     path('restype/', views.restype, name='restype'),
     path('meetingtitle/', views.meetingtitle, name='meetingtitle'),
-    path('meetingid/', views.meetingid, name='meetingid')
-]
+    path('meetingid/', views.meetingid, name='meetingid'),
+    path('newMeeting/', views.newMeeting, name='meetingform'),
+    path('newResource/', views.newResource, name='resourceform'),
+]   

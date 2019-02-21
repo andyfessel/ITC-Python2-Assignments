@@ -25,7 +25,7 @@ class MeetingMinutes(models.Model):
     ##meetmincreatedate=models.DateTimeField('Last Updated')
     ##meetminpublishdate=models.DateTimeField('Last Published')
     meetminattendance=models.ManyToManyField(User)
-    meetmintext=models.TextField(max_length=500, blank=True)
+    meetmintext=models.TextField(max_length=500, blank=True, null=True)
 
     def __str__(self):
         return str(self.meetingminutesid)
