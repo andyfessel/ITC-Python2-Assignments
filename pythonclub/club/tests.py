@@ -57,3 +57,17 @@ class TestGetMeeting(TestCase):
         response = self.client.get(reverse('meetingtitle'))
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'club/meetinghistory.html')
+
+class New_Product_Form_Test(TestCase):
+
+    ##imported from github/Steve - need to check for correct titles 02-25-19 12Noon
+
+    # Valid Form Data
+    def test_productForm_is_valid(self):
+        form = ProductForm(data={'productname': "Surface", 'techtype': "laptop", 'user': "steve", 'entrydate': "2018-12-17", 'productURL':"http:microsoft.com", 'productdescription':"lightweight laptop" })
+        self.assertTrue(form.is_valid())
+
+    # Invalid Form Data
+    def test_UserForm_invalid(self):
+        form = ProductForm(data={'productname': "Surface", 'techtype': "laptop", 'user': "steve", 'entrydate': "2018-12-17", 'productURL':"http:microsoft.com", 'productdescription':"lightweight laptop" })
+        self.assertFalse(form.is_valid())

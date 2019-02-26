@@ -6,6 +6,7 @@ from django.shortcuts import render
 from .models import Resource
 from .models import Meeting
 from .forms  import MeetingForm, ResourceForm
+from django.contrib.auth.decorators import login_required
 ##from django.utils import timezone
 
 # Create your views here.
@@ -20,6 +21,8 @@ def meetingtitle(request):
 def meetingid(request):
     type_list=Meeting.objects.all()
     return render (request, 'club/meetingid.html', {'type_list': type_list})
+##Form View
+@login_required
 def newMeeting(request):
     form=MeetingForm
     if request.method=='POST':
@@ -31,6 +34,7 @@ def newMeeting(request):
     else: 
         form=MeetingForm() 
     return render(request, 'club/meetingform.html', {'form': form})
+    
 def newResource(request):
     form=ResourceForm
     if request.method=='POST':
@@ -42,3 +46,9 @@ def newResource(request):
     else: 
         form=ResourceForm() 
     return render(request, 'club/resourceform.html', {'form': form})
+
+def loginmessage(request):
+     return render(request, 'club/loginmessage.html')
+
+def logoutmessage(request):
+     return render(request, 'club/logoutmessage.html')
