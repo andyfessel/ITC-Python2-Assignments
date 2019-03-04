@@ -71,3 +71,69 @@ class New_Product_Form_Test(TestCase):
     def test_UserForm_invalid(self):
         form = ProductForm(data={'productname': "Surface", 'techtype': "laptop", 'user': "steve", 'entrydate': "2018-12-17", 'productURL':"http:microsoft.com", 'productdescription':"lightweight laptop" })
         self.assertFalse(form.is_valid())
+
+class TestLogInMessage(TestCase):
+    
+    def test_view_url_accessible_by_name(self):
+        response = self.client.get(reverse('loginmessage'))
+        self.assertEqual(response.status_code, 200)
+        
+    def test_view_uses_correct_template(self):
+        response = self.client.get(reverse('loginmessage'))
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, 'club/loginmessage.html')
+
+class TestLogOutMessage(TestCase):
+    
+    def test_view_url_accessible_by_name(self):
+        response = self.client.get(reverse('logoutmessage'))
+        self.assertEqual(response.status_code, 200)
+        
+    def test_view_uses_correct_template(self):
+        response = self.client.get(reverse('logoutmessage'))
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, 'club/logoutmessage.html')
+
+class TestMeetingID(TestCase):
+    
+    def test_view_url_accessible_by_name(self):
+        response = self.client.get(reverse('meetingid'))
+        self.assertEqual(response.status_code, 200)
+        
+    def test_view_uses_correct_template(self):
+        response = self.client.get(reverse('meetingid'))
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, 'club/meetingid.html')
+
+class TestResourceType(TestCase):
+    
+    def test_view_url_accessible_by_name(self):
+        response = self.client.get(reverse('restype'))
+        self.assertEqual(response.status_code, 200)
+        
+    def test_view_uses_correct_template(self):
+        response = self.client.get(reverse('restype'))
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, 'club/type.html')
+
+class TestMeetingTitle(TestCase):
+    
+    def test_view_url_accessible_by_name(self):
+        response = self.client.get(reverse('meetingtitle'))
+        self.assertEqual(response.status_code, 200)
+        
+    def test_view_uses_correct_template(self):
+        response = self.client.get(reverse('meetingtitle'))
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, 'club/meetinghistory.html')
+
+class TestNewResource(TestCase):
+    
+    def test_view_url_accessible_by_name(self):
+        response = self.client.get(reverse('newResource'))
+        self.assertEqual(response.status_code, 200)
+        
+    def test_view_uses_correct_template(self):
+        response = self.client.get(reverse('newResource'))
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, 'club/resourceform.html')
