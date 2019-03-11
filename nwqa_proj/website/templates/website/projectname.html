@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Project Titles</h2>
+<table class = 'table'>
+    <tr>
+        <th>Project Name</th>
+        <th>Project Description</th>
+    </tr>
+    {% for item in type_list %}
+    <tr>
+        <td>{{ item.projectname }}</td>
+        <td>{{ item.productdescription}}</td>
+    </tr>
+    {% endfor %}
+
+    </table>
+
+{% endblock %}

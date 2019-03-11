@@ -1,0 +1,19 @@
+<!-- need to add description -->
+{% extends 'base.html' %}
+{% block content %}
+<h2>Safety</h2>
+<table class = 'table'>
+    <tr>
+        <th>Safety Issue Name</th>
+        <!--<th>Safety Issue Description</th> -->
+    </tr>
+    {% for item in type_list %}
+    <tr>
+        <td>{{ item.safety_issue }}</td>
+        <!--<td>{{ item.safety_issue_description}}</td> -->
+    </tr>
+    {% endfor %}
+
+    </table>
+
+{% endblock %}

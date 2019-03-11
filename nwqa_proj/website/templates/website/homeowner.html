@@ -1,0 +1,20 @@
+<!-- need to customize -->
+{% extends 'base.html' %}
+{% block content %}
+<h2>Homeowner Members</h2>
+<table class = 'table'>
+    <tr>
+        <th>Home Owner Name</th>
+        <th>Home Owner Street Address</th>
+    </tr>
+    {% for item in type_list %}
+    <tr>
+        <td>{{ item.namelast }}</td>
+        <td>{{ item.namefirst }}</td>
+        <td>{{ item.address_street}}</td>
+    </tr>
+    {% endfor %}
+
+    </table>
+
+{% endblock %}

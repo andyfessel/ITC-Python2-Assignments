@@ -1,0 +1,19 @@
+<!-- need to add description -->
+{% extends 'base.html' %}
+{% block content %}
+<h2>Celebration Events</h2>
+<table class = 'table'>
+    <tr>
+        <th>Celebration Event Title</th>
+        <!--<th>Celebration Description</th> -->
+    </tr>
+    {% for item in type_list %}
+    <tr>
+        <td>{{ item.celebrations_events }}</td>
+       <!--<td>{{ item.celebationsdescription}}</td> -->
+    </tr>
+    {% endfor %}
+
+    </table>
+
+{% endblock %}

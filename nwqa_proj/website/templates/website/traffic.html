@@ -1,0 +1,18 @@
+<!-- need to add issue & description -->
+{% extends 'base.html' %}
+{% block content %}
+<h2>Traffic</h2>
+<table class = 'table'>
+    <tr>
+       <!-- <th>Traffic Issue</th> -->
+       <!-- <th>Traffic Issue Description</th> --> <th>Project Description</th>
+    </tr>
+    {% for item in type_list %}
+    <tr>
+        <!--<td>{{ item.traffic_issue }}</td> -->
+        <!--td>{{ item.traffic_issue_description}}</td> -->    </tr>
+    {% endfor %}
+
+    </table>
+
+ {% endblock %}

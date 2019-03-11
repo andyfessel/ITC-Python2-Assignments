@@ -1,0 +1,19 @@
+<!-- need to add decription -->
+{% extends 'base.html' %}
+{% block content %}
+<h2>Need Good Neighbor</h2>
+<table class = 'table'>
+    <tr>
+        <th>Need Good Neighbor Issue</th>
+        <th>Need Good Neighbor Issue Description</th>
+    </tr>
+    {% for item in type_list %}
+    <tr>
+        <td>{{ item.needgoodneighbor_issue }}</td>
+        <!--<td>{{ item.needgoodneighbor_issuedescription}}</td> -->
+    </tr>
+    {% endfor %}
+
+    </table>
+
+{% endblock %}
